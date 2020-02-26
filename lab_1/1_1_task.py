@@ -20,46 +20,12 @@ def unique(list1, list2):
 
     # driver code
 
-"""
-list1 = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-print("the unique values from 1st list is")
-unique(list1)
-
-list2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-print("\nthe unique values from 2nd list is")
-unique(list2)
-"""
+# You need to write a program that returns a list of values exists in both lists. And the output list has to contain only unique values
 list1 = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 list2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 unique(list1, list2)
 
-
-
-
-
-
-def common_data(lista, listb):
-    is_in_both = []
-
-    # traverse in the 1st list
-    for x in lista:
-
-        # traverse in the 2nd list
-        for y in listb:
-
-            # if one common
-            if x.__eq__(y):
-                is_in_both.append(y)
-
-    print(is_in_both.sort())
-
-
-lista = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-listb = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-common_data(lista, listb)
-
-
-
+# 1-st variant
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 def common(a,b):
@@ -99,5 +65,15 @@ solution('abc', 'bc')  # returns True
 solution('abc', 'd')  # returns False
 solution('abc', 'dikikik')  # returns False
 solution('abc', 'abc')  # returns True
+
+def sol_2(long1, short):
+    sh = len(short)
+    print(sh)
+    print(long1[-sh:])
+    print(long1[-sh:]==short)
+ #   print('last chars:', long1[len(long1) - len(short):])
+
+sol_2('sdafgabc', 'abc')  # returns True
+
 
 
