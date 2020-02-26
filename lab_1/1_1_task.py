@@ -83,5 +83,21 @@ print(common(a, b))
 
 a3 = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 b3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-print(set(a3).intersection(b3))
+print(list(set(a3).intersection(b3)))
 print(list(set(a3) & set(b3)))
+
+# Task 2
+
+def solution(long_str, short_str):
+   # implement function here
+    result = long_str.endswith(short_str)
+    print(result)
+
+
+# Testcases
+solution('abc', 'bc')  # returns True
+solution('abc', 'd')  # returns False
+solution('abc', 'dikikik')  # returns False
+solution('abc', 'abc')  # returns True
+
+
