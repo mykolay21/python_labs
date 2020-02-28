@@ -75,5 +75,31 @@ def sol_2(long1, short):
 
 sol_2('sdafgabc', 'abc')  # returns True
 
+[11: 11
+AM] Oleksandr
+Novachok
+
+#another  decision
+def solution(long_str, short_str):
+    x = long_str.find(short_str)
+
+    l = len(long_str)
+
+    s = len(short_str)
+
+    print(l - s == x)
+
+
+
+
+
+def solution(long_str, short_str):
+    return long_str.endswith(short_str)
+
+
+def solution2(long_str, short_str) -> bool:
+    return short_str == long_str[-len(short_str):]
+
+
 
 
