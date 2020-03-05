@@ -1,5 +1,6 @@
 import urllib.request
 import json
+import operator
 
 url = "http://dummy.restapiexample.com/api/v1/employees"
 urllib.request .urlopen(url)
@@ -20,9 +21,6 @@ print(json_data['data'])
 data = json_data['data']
 print(data)
 
-person_json = json.dumps(data)
-print(person_json)
-
 
 my_list = []
 for p in data:
@@ -30,3 +28,12 @@ for p in data:
 my_list.sort(reverse=True)
 print(my_list)
 
+
+my_dict = {}
+for x in data:
+    my_dict.update({x['employee_name']: int(x['employee_salary'])})
+
+print(my_dict)
+
+a = sorted(my_dict.items(), key=lambda y: y[1], reverse=True)
+print(a)
