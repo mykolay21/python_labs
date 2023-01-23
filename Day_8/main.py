@@ -31,6 +31,13 @@ def decrypt(cipher_text, shift_amount):
     print(f"The encoded text is {plain_text}")
 
 
+def cesar(start_text, shift_amount,cipher_direction ):
+    end_text = ""
+    for letter in start_text:
+        position = alphabet.index(letter)
+        if cipher_direction == "decode":
+
+
 # amount and print the encrypted text.
 # e.g.
 # plain_text = "hello"
