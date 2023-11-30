@@ -36,6 +36,7 @@ def cesar(start_text, shift_amount,cipher_direction ):
     for letter in start_text:
         position = alphabet.index(letter)
         if cipher_direction == "decode":
+            print("nothing")
 
 
 # amount and print the encrypted text.
