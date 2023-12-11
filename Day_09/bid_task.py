@@ -22,7 +22,7 @@ if __name__ == '__main__':
     # Set the TERM environment variable to xterm to avoid issues with clearing the screen
     os.environ['TERM'] = 'xterm'
     # Clear screen on Mac (Unix-like system)
-    os.system('clear screen')
+    
     print(bids)
 
     #  bids = {'Jon': 16, 'Brian': 45, 'Ivan': 12}
@@ -30,3 +30,4 @@ if __name__ == '__main__':
     max_bidder = max(bids, key=lambda k: bids[k])
 
     print(f"The maximum bid is {bids[max_bidder]} by {max_bidder}")
+
