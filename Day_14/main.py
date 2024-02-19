@@ -1,4 +1,4 @@
-from art import logo
+from art import logo, vs
 from game_data import data
 from random import randint
 import random
@@ -50,12 +50,8 @@ def game():
         while account_a == account_b:
             account_b = get_random_account()
         print(f"Compare A: {format_data(account_a)}.")
-        print('vs')
+        print(vs)
         print(f"Against B: {format_data(account_b)}.")
-
-        guess = input("Who has more followers? Type 'A' or 'B': ").lower()
-        a_follower_count = account_a["follower_count"]
-        b_follower_count = account_b["follower_count"]
 
         guess = input("Who has more followers? Type 'A' or 'B': ").lower()
         a_follower_count = account_a["follower_count"]
