@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/lab_materials/oop-coffee-machine-start/.idea/oop-coffee-machine-start.iml" filepath="$USER_HOME$/lab_materials/oop-coffee-machine-start/.idea/oop-coffee-machine-start.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/python_labs.iml" filepath="$PROJECT_DIR$/.idea/python_labs.iml" />
     </modules>
   </component>
