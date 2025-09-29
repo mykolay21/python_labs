@@ -1,6 +1,10 @@
 from turtle import Turtle, goto
 import random
 
+
+
+
+
 class Food(Turtle):
 
     def __init__(self):
@@ -16,7 +20,8 @@ class Food(Turtle):
 
 
     def refresh(self):
-        goto(random.randint(-280, 280), random.randint(-280, 280))
+        self.goto(random.randint(-280, 280), random.randint(-280, 280))
+
 
 
 
