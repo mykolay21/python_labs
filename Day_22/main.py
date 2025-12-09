@@ -1,6 +1,12 @@
 # main.py
+import time
+from time import sleep
 from turtle import Screen, Turtle
 from paddle import Paddle
+from ball import Ball
+from scoreboard import Scoreboard
+
+
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -44,10 +50,12 @@ def main():
     # Optional: draw a border so it looks like a game board.
     draw_border(screen)
 
+
     # Create paddles
     right_paddle = Paddle(x_pos=350, y_pos=0)
     left_paddle = Paddle(x_pos=-350, y_pos=0)
-
+    ball = Ball()
+    scoreboard = Scoreboard()
     # Keyboard bindings
     screen.listen()
     screen.onkeypress(right_paddle.move_up, "Up")
@@ -56,11 +64,32 @@ def main():
     screen.onkeypress(left_paddle.move_up, "w")
     screen.onkeypress(left_paddle.move_down, "s")
 
+    game_is_on = True
     # Game loop
-    while True:
+    while game_is_on:
+        time.sleep(ball.move_speed)
         screen.update()
 
+        sleep(0.01)
+        ball.move()
 
+        # Bounce off top/bottom walls
+        if ball.ycor() > (SCREEN_HEIGHT // 2 - 20) or ball.ycor() < -(SCREEN_HEIGHT // 2 - 20):
+            ball.bounce_y()
+
+        # Bounce off paddles
+        if (ball.xcor() > 320 and ball.distance(right_paddle) < 50) or \
+                (ball.xcor() < -320 and ball.distance(left_paddle) < 50):
+            ball.bounce_x()
+
+        # Detect out of bounds (score situation)
+        if ball.xcor() > SCREEN_WIDTH // 2 - 10:
+            ball.reset_position()
+            scoreboard.left_point()
+
+        if ball.xcor() < -(SCREEN_WIDTH // 2 - 10):
+            ball.reset_position()
+            scoreboard.right_point()
 
 if __name__ == "__main__":
     main()
