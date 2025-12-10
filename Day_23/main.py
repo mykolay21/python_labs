@@ -3,7 +3,7 @@ from turtle import Screen
 from player import Player
 from car_manager import CarManager
 from scoreboard import Scoreboard
-import random
+
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -32,6 +32,13 @@ while game_is_on:
         if car.distance(player) < 20:
             game_is_on = False
             scoreboard.game_over()
+
+    # Detect collision with car
+    for car in car_manager.all_cars:
+       if  car.distance(player) < 20:
+           game_is_on = False
+
+
 
     # Detect successful crossing
     if player.is_at_finish_line():
